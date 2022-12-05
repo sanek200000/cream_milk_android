@@ -1,0 +1,50 @@
+
+<ItemTextInput@TextInput>:
+    multiline: False
+    #size_hint_x: 0.2
+    #size_hint_y: 0.9
+    input_type: 'number'
+    input_filter: 'int'
+
+<Container>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: '10dp'
+
+    amount_of_milk: amount_of_milk
+    fat_cont_cream: fat_cont_cream
+    amount_of_cream: amount_of_cream
+    fat_cont_milk: fat_cont_milk
+    fat_cont_mix: fat_cont_mix
+
+    Label:
+        id: amount_of_milk
+        text:'Количество молока для разведения, мл'
+        size_hint_y: 0.4
+
+    ItemTextInput:
+        id: fat_cont_cream
+        text:'35'
+        hint_text:'жирность сливок, %'
+
+    ItemTextInput:
+        id: amount_of_cream
+        text:'500'
+        hint_text:'количество сливок, мг'
+        
+    ItemTextInput:
+        id: fat_cont_milk
+        text:'2.5'
+        input_filter: 'float'
+        hint_text:'жирность молока, %'
+
+    ItemTextInput:
+        id: fat_cont_mix
+        text:'20'
+        hint_text:'нужная жирность смеси, %'
+            
+    Button: 
+        text: 'Рассчитать'
+        size_hint: 0.5, 0.1
+        pos_hint: {'center_x': 0.5, 'y': 0.1}
+        on_release: root.change_text()

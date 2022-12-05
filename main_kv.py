@@ -1,5 +1,12 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+from kivy.core.window import Window
+
+Window.title = "Разбавлятель для сливок"
+#Window.size = (324, 720)
+
+from kivy.config import Config
+Config.set('kivy', 'keyboard_mode', 'systemanddock')
 
 
 class Container(BoxLayout):
@@ -12,6 +19,10 @@ class Container(BoxLayout):
         except:
             self.amount_of_milk.text = 'Введено неверное значение, повторите ввод.'
         else:
+            if fat_cont_milk >= fat_cont_mix:
+                fat_cont_milk = 1
+                self.fat_cont_milk.text = str(fat_cont_milk)
+                
             amount_of_milk = ((fat_cont_cream - fat_cont_mix) * amount_of_cream) / (fat_cont_mix - fat_cont_milk)
             amount_of_milk = str(int(amount_of_milk))
             
