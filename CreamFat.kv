@@ -1,0 +1,58 @@
+
+<Container>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: '10dp'
+
+    amount_of_milk: amount_of_milk
+    fat_cont_cream: fat_cont_cream
+    amount_of_cream: amount_of_cream
+    fat_cont_milk: fat_cont_milk
+    fat_cont_mix: fat_cont_mix
+
+    Label:
+        id: amount_of_milk
+        text:'Количество молока для разведения, мл'
+        size_hint_y: 0.5
+
+    GridLayout:
+        cols: 2
+        size_hint_y: 0.3
+
+        Label:
+            text:'жирность сливок, %'
+        TextInput:
+            id: fat_cont_cream
+            text:'35'
+            multiline: False
+            size_hint_x: 0.2
+
+        Label:
+            text:'количество сливок, мг'
+        TextInput:
+            id: amount_of_cream
+            text:'500'
+            multiline: False
+            size_hint_x: 0.2
+
+        Label:
+            text:'жирность молока, %'
+        TextInput:
+            id: fat_cont_milk
+            text:'2.5'
+            multiline: False
+            size_hint_x: 0.2
+
+        Label:
+            text:'нужная жирность смеси, %'
+        TextInput:
+            id: fat_cont_mix
+            text:'20'
+            multiline: False
+            size_hint_x: 0.2
+
+    Button: 
+        text: 'Рассчитать'
+        size_hint: 0.5, 0.1
+        pos_hint: {'center_x': 0.5, 'y': 0.1}
+        on_release: root.change_text()
