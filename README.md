@@ -1,1 +1,8 @@
-# cream_milk_android
+# cream_milk_android# cream_milk_android
+# Разбавляем сливки молоком
+* fat_cont_cream — жирность сливок
+* amount_of_cream - количество сливок, мг.
+* fat_cont_milk — жирность молока
+* fat_cont_mix — нужная жирность смеси
+
+amount_of_milk — мл. молока жирностью А2, которые необходимо добавить к 100 мл сливок жирностью А1 для получения смеси жирностью В.
